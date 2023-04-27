@@ -1,0 +1,125 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<div class="card">
+  <div class="face face1">
+    <div class="content">
+      <img src={href} />
+      <h3>{title}</h3>
+    </div>
+  </div>
+  <div class="face face2">
+    <div class="content">
+      <p>
+        {body}
+      </p>
+      <a href="#">Ver Proyectos</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    border-radius: 0.8rem;
+    border: #4dd58d 0.5px solid;
+  }
+
+  .card .face.face1 {
+    position: relative;
+    background: #10372a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.6rem;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+  }
+
+  .card:hover .face.face1 {
+    background: #4dd58d;
+    border-radius: 0;
+    transform: translateY(0);
+  }
+
+  .card .face.face1 .content {
+    opacity: 0.2;
+    transition: 0.5s;
+  }
+
+  .card:hover .face.face1 .content {
+    border-radius: 0;
+    opacity: 1;
+  }
+
+  .card .face.face1 .content img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .card .face.face1 .content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(-100px);
+  }
+
+  .card:hover .face.face2 {
+    border-radius: 0;
+    transform: translateY(0);
+  }
+
+  .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .card .face.face2 .content a {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #10372a;
+    padding: 5px;
+    border: 1px solid #333;
+  }
+
+  .card .face.face2 .content a:hover {
+    background: #10372a;
+    color: #fff;
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      margin: 20px;
+    }
+  }
+</style>

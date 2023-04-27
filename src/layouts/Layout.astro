@@ -1,0 +1,33 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color:var(--light);
+  }
+</style>

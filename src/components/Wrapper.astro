@@ -1,0 +1,102 @@
+---
+export interface Props {
+  staticTxt: string;
+  one: string;
+  two: string;
+  three: string;
+  four: string;
+}
+
+const { staticTxt, one, two, three, four } = Astro.props;
+---
+
+<div class="wrapper">
+  <h2 class="static-txt">
+    {staticTxt}
+  </h2>
+  <ul class="dynamic-txts">
+    <li><span>{one}</span></li>
+    <li><span>{two}</span></li>
+    <li><span>{three}</span></li>
+    <li><span>{four}</span></li>
+  </ul>
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper .static-txt {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+  .wrapper .dynamic-txts {
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  .dynamic-txts li {
+    list-style: none;
+    color: #56f09f;
+    font-size: 5rem;
+    font-weight: 700;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100% {
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #10372a;
+    border-left: 2px solid #56f09f;
+    animation: typing 3s steps(17) infinite;
+  }
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 30px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .wrapper .static-txt {
+      font-size: 1.5em;
+    }
+    .wrapper .dynamic-txts {
+      margin-left: 0;
+    }
+    .dynamic-txts li {
+      font-size: 1.5em;
+    }
+    .dynamic-txts li span::after {
+      top: 4px;
+      border-left: 2px solid #56f09f;
+    }
+  }
+</style>
