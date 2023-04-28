@@ -3,11 +3,15 @@
 @font-face {
     font-family: 'Library 3 am';
     src: url('font/Library 3 am.otf') format('opentype');
+    font-display: swap;
+    font-weight: normal;
+    font-style: normal;
 }
 
 :root {
     --green : #10372a;
     --yellow: #fccf4c;
+    --primary: #56f09f;
     --light: #fffbec;
     --dark: #0b1929;
     --mexFont: 'Library 3 am';
@@ -16,6 +20,8 @@
     --CodeFont: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
+
+
 
 *{
     margin: 0;
