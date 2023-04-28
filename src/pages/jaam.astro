@@ -3,23 +3,90 @@ import Folio from "../layouts/Folio.astro";
 ---
 
 <Folio title="Jose Angel Arjona Matheis">
-  <section class="hero">
-    <div class="hero-content container">
+  <section class="hero" id="home">
+    <div class="hero-content">
       <h1>Hola 👋 soy <span>Nombre</span></h1>
       <div class="text-animate">
         <h3>Desarrollador de Software</h3>
       </div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        voluptatum, quibusdam, quos, voluptate voluptas quia quae dolorum
+        voluptatibus quod quas natus. Quisquam voluptatum, quibusdam, quos,
+        voluptate voluptas quia quae dolorum voluptatibus quod quas natus.
+      </p>
       <div class="btn-box">
-        <!-- Descargar CV -->
-        <a href="#contact" class="btn btn-transparent">Contacto</a>
+        <a href="#" class="btn">Descargar CV</a>
+        <a href="#contact" class="btn">Contacto</a>
+      </div>
+    </div>
+    <div class="social">
+      <a href=""><i class="bx bxl-linkedin"></i></a>
+      <a href=""><i class="bx bxl-github"></i></a>
+      <!-- Si quieres más ponlas -->
+    </div>
+  </section>
+  <section class="edu">
+    <h2>Educación</h2>
+    <div class="edu-row">
+      <div class="edu-col">
+        <h3>Educación</h3>
+        <div class="edu-box">
+          <div class="edu-cont">
+            <div class="content">
+              <div class="year">
+                <i class="bx bx-calendar-star"></i> 2000-2000
+              </div>
+              <h4>Titulo</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi, quas officiis? Nobis totam quia magnam quasi ut
+                perspiciatis accusamus consectetur nam saepe? Esse, ad animi
+                ipsum recusandae voluptate harum debitis?
+              </p>
+            </div>
+          </div>
+          <div class="edu-cont">
+            <div class="content">
+              <div class="year">
+                <i class="bx bx-calendar-star"></i> 2000-2000
+              </div>
+              <h4>Titulo</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Excepturi, quas officiis? Nobis totam quia magnam quasi ut
+                perspiciatis accusamus consectetur nam saepe? Esse, ad animi
+                ipsum recusandae voluptate harum debitis?
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+  <!-- Skills -->
 </Folio>
 
 <style>
-  .text-animate {
+  section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    padding: 0 9%;
+  }
+  .hero-content {
+    max-width: 60rem;
+  }
+  .home-content h1 {
     font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .text-animate {
+    font-size: 3rem;
     -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
       both;
     animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -49,5 +116,180 @@ import Folio from "../layouts/Folio.astro";
       filter: blur(0px);
       opacity: 1;
     }
+  }
+  .hero-content p {
+    font-size: 1.9rem;
+    margin: 2rem 0 4rem;
+  }
+
+  .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 34.5rem;
+    height: 5rem;
+  }
+  .btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--dark);
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .btn-box .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--green);
+    transition: width 0.3s ease-in-out;
+  }
+  .btn-box .btn:hover::before {
+    width: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+  }
+  .btn-box .btn:hover::before {
+    width: 100%;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    padding: 1rem;
+    content: "✉"; /* Agrega el texto del botón */
+    color: var(--primary);
+  }
+
+  .btn-box .btn:first-child {
+    background-color: var(--green);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+  .btn-box .btn:first-child:hover::before {
+    background-color: var(--primary);
+    content: "✔";
+    color: var(--dark);
+  }
+
+  .social {
+    position: absolute;
+    bottom: 30rem;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .social a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    font-size: 25px;
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .social a:hover {
+    background-color: var(--primary);
+    color: var(--dark);
+  }
+
+  .edu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 5rem;
+  }
+
+  .edu h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--light);
+  }
+  .edu-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+
+  .edu-row .edu-col {
+    flex: 1 1 40rem;
+  }
+
+  .edu-col h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 2rem;
+  }
+
+  .edu-col .edu-box {
+    border-left: 2px solid var(--primary);
+  }
+  .edu-box .edu-cont {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  .edu-box .edu-cont::before {
+    content: "";
+    position: absolute;
+    top: 1.4rem;
+    left: -1.01rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+  }
+  .edu-cont .content {
+    position: relative;
+    padding: 1.5rem;
+    overflow: hidden;
+  }
+  .edu-cont .content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #56f09e0c;
+    border-radius: 5px;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  .edu-cont .content:hover::before {
+    width: 100%;
+  }
+  .content .year {
+    font-size: 1.5rem;
+    color: var(--primary);
+    padding-bottom: 0.5rem;
+  }
+
+  .year i {
+    padding-right: 0.5rem;
+  }
+  .content h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .content p {
+    font-size: 1.7rem;
   }
 </style>
