@@ -44,16 +44,22 @@ import "../styles/global.css";
 
 <style>
   body {
+    background-color: var(--green);
+    color: var(--light);
+  }
+  /*  body {
     min-height: calc(100vh + 400px);
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: var(--light);
-  }
+  } */
+
   /* Loader css */
   #content {
     display: none;
     animation: fade-in 1s ease-in-out forwards;
   }
+
   @keyframes fade-in {
     0% {
       opacity: 0;
@@ -62,6 +68,7 @@ import "../styles/global.css";
       opacity: 1;
     }
   }
+
   #loader {
     position: fixed;
     top: 0;
