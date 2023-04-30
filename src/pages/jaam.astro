@@ -2,6 +2,7 @@
 import Folio from "../layouts/Folio.astro";
 import ContactCard from "../components/ContactCard.astro";
 import Footer from "../components/Footer.astro";
+import CardProyects from "../components/CardProyects.astro";
 ---
 
 <Folio title="Jose Angel Arjona Matheis">
@@ -22,12 +23,19 @@ import Footer from "../components/Footer.astro";
         <a href="#contact" class="btn">Contacto</a>
       </div>
     </div>
+    <div class="img">
+      <img
+        src="https://th.bing.com/th/id/R.7638ae657ade274bd98a0ef815d57297?rik=mXi9oiGKXaFJJA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f06%2fRaccoon-PNG-Picture.png&ehk=7OdZOKIOCzEBp9YEzpPwnX6h0dRSLr%2fIrlnsn8QvAAM%3d&risl=&pid=ImgRaw&r=0"
+        alt="Profile Pic"
+      />
+    </div>
     <div class="social">
       <a href=""><i class="bx bxl-linkedin"></i></a>
       <a href=""><i class="bx bxl-github"></i></a>
-      <!-- Si quieres más ponlas -->
+      <!-- Si quieres más agregalas -->
     </div>
   </section>
+  <!-- Educacion -->
   <section class="edu">
     <h2 class="heading">Educación</h2>
     <div class="edu-row">
@@ -110,6 +118,53 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
+  <!-- Proyectos -->
+  <section class="proyects">
+    <h2 class="heading">Proyectos</h2>
+    <div class="grid col-3 md-col-2 sm-col-1">
+      <div>
+        <CardProyects
+          title="MEXIC0DE"
+          about="Sitio oficial de MEXIC0DE. Desarrollado con Astro, es el portafolio del grupo de desarroladores MEXIC0DE"
+          img="https://phx02pap002files.storage.live.com/y4mjCuSoDICUagL1hWYLfcFl9KKor_iqh-F9R2XBkBOMpJeZIyFzkpL6Jesfj2RShyW9SdTCUknfY790RtT0XZ3IjKMsWjc6AjrPVqCrSRbZ-DxUSGRxOup7oz3l6L98ymp75evxkeraixQM6Sapfd4-7mWp1lH3rdOd937OjPMxGMFnFaIubb31nU1BWtDPLqi?width=960&height=720&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0de.git"
+          pg="/"
+          extra={true}
+        />
+      </div>
+      <div>
+        <CardProyects
+          title="MEXIC0DE-TUTO"
+          about="Blog oficial de MEXIC0DE. Desarrollado con Astro, es un blog con articulos de tecnologia y tutoriales"
+          img="https://phx02pap002files.storage.live.com/y4mr61C7FG37u-v10hxod7SP01aZ-YJNM9eugip4SGgEBRFCaf2kL78K5aoAjxf_YuWJTX3vHYyHIG9qugUl0fwMKzJ93lM39MEg5IprbhZiKzb0hHt3FHsMGXW67Zv1GqVgIdbU1WWijI5GSAmYP_GSTu3MpFF423ean57vVGovEQZv3-cP4y7_Lt5QkNXIej3?width=1400&height=1050&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0deBlog.git"
+          pg="https://mexic0de-blog.vercel.app/"
+          extra={true}
+        />
+      </div>
+      <div>
+        <CardProyects
+          title="MEXIC0DE SEARCH"
+          about="Pagina de buscador personalizada. Desarrollado con Svelte, es un sitio que emula el sitio google.com y añade marcadores personalizables"
+          img="https://phx02pap002files.storage.live.com/y4mocD9BS-qHMd-T4NZwnxT9pkJ45hOUO5dnJ87c41cpe9VaD4FIBxZPXZMSNN4uyPLc0ff-E670qXzDZwPh27xA11q2MabvmBfG31ctKC0aoBuQiI4q6lO7hPSWpCVWggvrWtq7aQ41TsSWC8QEHD-GJyuBigYMhGljbQmPyFSD-10-4FFl5ohdtKEp1vxQr83?width=960&height=720&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0deSearch"
+          pg="https://mexcde-search.netlify.app/"
+          extra={true}
+        />
+      </div>
+      <div>
+        <CardProyects
+          title="POLICARD"
+          about="Applicación Web para UPTAP. Desarrollado con Svelte, es una aplicación web que hace uso de una API-REST desarrollada con DJANGO; el objetivo es crear un sistema de credencialización para la Universidad"
+          img="https://phx02pap002files.storage.live.com/y4mEopybeAXZZINyATZFR2MKbM4sJ830NRvRw5MqO18qowWZgqK5RHUf47iuixBztBIkLmAV4KOg1x2mUUERxgRXVRlc18NVDtbmnKHc2sPNxTzyvsboV7X9m9FiZKrpTqSxbjfrhTF2XNxxGr14ZA2v3C4GNZ3G06jQRDJrzZUkBbi3S-6pTrGyuiWjceoQdis?width=960&height=720&cropmode=none"
+          gh=""
+          pg=""
+          extra={false}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- Contacto -->
   <section class="contact" id="contact">
     <h2 class="heading">Contacto</h2>
     <ContactCard
@@ -143,10 +198,41 @@ import Footer from "../components/Footer.astro";
   .hero {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 9%;
+    flex-wrap: wrap-reverse;
   }
   .hero-content {
     max-width: 60rem;
+    flex-basis: 60%;
+  }
+
+  .img {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img img {
+    width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .img img:hover {
+    animation-play-state: paused;
+  }
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-10px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
   }
   .home-content h1 {
     font-size: 4rem;
@@ -453,12 +539,106 @@ import Footer from "../components/Footer.astro";
     width: 50%;
   }
 
+  .grid {
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    row-gap: 20px;
+  }
+  .proyects {
+    min-height: auto;
+    padding: 5rem 2rem;
+    overflow: hidden;
+  }
+
   .contact {
     min-height: auto;
     padding-bottom: 15rem;
+    background-color: #56f09e0c;
   }
 
-  /* ANIMATE SCROLL*/
+  /* Resposive Hero Section */
+
+  @media screen and (max-width: 425px) {
+    .hero {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .img {
+      width: 100%;
+      height: 100%;
+      padding-top: 10rem;
+      margin: auto;
+    }
+
+    .img img {
+      width: 100%;
+      height: 100%;
+    }
+    .hero .hero-col {
+      flex: 1 1 100%;
+      margin-bottom: 2rem;
+    }
+    .social {
+      position: absolute;
+      bottom: -1rem;
+      right: 1rem;
+    }
+
+    .proyects {
+      padding: 6rem;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .hero {
+      padding: 1rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .hero {
+      padding: 1rem 1rem;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: 2.9rem;
+      padding-left: 5rem;
+    }
+
+    .hero h3 {
+      font-size: 1.9rem;
+      padding-left: 5rem;
+    }
+
+    .hero p {
+      font-size: 1.9rem;
+      padding-left: 5rem;
+    }
+
+    .hero .btn-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .hero .btn {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      width: 23rem;
+      height: 10rem;
+      padding: 1rem 1rem;
+    }
+    .proyects {
+      padding: 1rem 1rem;
+    }
+  }
 </style>
 
 <script is:inline>

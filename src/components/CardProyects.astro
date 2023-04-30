@@ -1,0 +1,137 @@
+---
+export interface Props {
+  img: string;
+  title: string;
+  about: string;
+  extra: boolean;
+  gh: string;
+  pg: string;
+}
+
+const { img, title, about, gh, pg, extra } = Astro.props;
+---
+
+<div class="card">
+  <img src={img} alt="Imagen de proyecto" />
+  <div class="card-content">
+    <h2>{title}</h2>
+    <p>{about}</p>
+    <div class="card-buttons">
+      {
+        extra ? (
+          <>
+            <a href={gh} class="github-button" target="_blank">
+              <i class="fab fa-github" />
+              GitHub
+            </a>
+            <a href={pg} class="other-button" target="_blank">
+              Pagina Web
+            </a>
+          </>
+        ) : (
+          <>Confidencial</>
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    position: relative;
+    width: 25vw;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(0deg);
+    border: 1px solid var(--primary);
+  }
+
+  .card:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transform: perspective(800px) rotateX(10deg);
+  }
+
+  .card img {
+    width: 100%;
+    object-fit: cover;
+    filter: blur(2px);
+    transition: all 0.3s ease;
+    transform: translateZ(-1px);
+  }
+
+  .card:hover img {
+    filter: none;
+  }
+
+  .card-content {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--green);
+  }
+
+  .card:hover .card-content {
+    background-color: #133f2f;
+  }
+
+  .card-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-buttons {
+    display: flex;
+  }
+
+  .github-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin-right: 10px;
+    color: var(--light);
+    background-color: var(--dark);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .github-button:hover {
+    background-color: var(--light);
+    color: black;
+    border: 1px solid black;
+  }
+
+  .other-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: var(--dark);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .other-button:hover {
+    background-color: var(--green);
+    color: var(--light);
+    border: 1px solid var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
+</style>
