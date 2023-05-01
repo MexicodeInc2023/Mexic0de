@@ -1,54 +1,113 @@
 ---
 import Layout from "../layouts/Layout.astro";
 /* Aqui se importa los componentes si es que usan */
-import components from "../components/Proyects.astro";
+import CardProyects from "../components/CardProyects.astro";
+import Banner from "../components/Banner.astro";
+
 ---
 
 <Layout title="Proyectos">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <!-- Dentro de este Layout va su html -->
   <header class="showcase">
     <h2>Proyectos MEXIC0DE</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id dolor laudantium rerum, excepturi est praesentium
-      natus qui? Tempora rerum, numquam inventore eligendi in, nostrum reprehenderit, eum cumque fugit eaque
-      similique!</p>
   </header>
+  <div class="container">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <!-- Dentro de este Layout va su html -->
 
-  <div class="news-cards">
-    <div>
-      <img src="assets/Policard.svg" alt="" />
-      <h3>Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-        doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
-      </p>
-      <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
+    <div class="news-cards">
+      <CardProyects
+        title="MEXIC0DE"
+        about="Sitio oficial de MEXIC0DE. Desarrollado con Astro, es el portafolio del grupo de desarroladores MEXIC0DE"
+        img="https://phx02pap002files.storage.live.com/y4mjCuSoDICUagL1hWYLfcFl9KKor_iqh-F9R2XBkBOMpJeZIyFzkpL6Jesfj2RShyW9SdTCUknfY790RtT0XZ3IjKMsWjc6AjrPVqCrSRbZ-DxUSGRxOup7oz3l6L98ymp75evxkeraixQM6Sapfd4-7mWp1lH3rdOd937OjPMxGMFnFaIubb31nU1BWtDPLqi?width=960&height=720&cropmode=none"
+        gh="https://github.com/MexicodeInc2023/Mexic0de.git"
+        pg="/"
+        extra={true}
+      />
+      <div>
+        <CardProyects
+          title="MEXIC0DE-TUTO"
+          about="Blog oficial de MEXIC0DE. Desarrollado con Astro, es un blog con articulos de tecnologia y tutoriales"
+          img="https://phx02pap002files.storage.live.com/y4mr61C7FG37u-v10hxod7SP01aZ-YJNM9eugip4SGgEBRFCaf2kL78K5aoAjxf_YuWJTX3vHYyHIG9qugUl0fwMKzJ93lM39MEg5IprbhZiKzb0hHt3FHsMGXW67Zv1GqVgIdbU1WWijI5GSAmYP_GSTu3MpFF423ean57vVGovEQZv3-cP4y7_Lt5QkNXIej3?width=1400&height=1050&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0deBlog.git"
+          pg="https://mexic0de-blog.vercel.app/"
+          extra={true}
+        />
+      </div>
     </div>
-    <div>
-      <img src="img/css.jpg" alt="" />
-      <h3>Lorem, ipsum dolor.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore fugit esse corporis nesciunt minima
-        doloremque modi mollitia rerum, similique optio eligendi itaque amet qui ullam vel incidunt asperiores fuga?
-      </p>
-      <a href="#">Learn More <i class="fas fa-angle-double-right"></i></a>
+    <div class="news-cards">
+      <div>
+        <CardProyects
+          title="MEXIC0DE SEARCH"
+          about="Pagina de buscador personalizada. Desarrollado con Svelte, es un sitio que emula el sitio google.com y añade marcadores personalizables"
+          img="https://phx02pap002files.storage.live.com/y4mocD9BS-qHMd-T4NZwnxT9pkJ45hOUO5dnJ87c41cpe9VaD4FIBxZPXZMSNN4uyPLc0ff-E670qXzDZwPh27xA11q2MabvmBfG31ctKC0aoBuQiI4q6lO7hPSWpCVWggvrWtq7aQ41TsSWC8QEHD-GJyuBigYMhGljbQmPyFSD-10-4FFl5ohdtKEp1vxQr83?width=960&height=720&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0deSearch"
+          pg="https://mexcde-search.netlify.app/"
+          extra={true}
+        />
+      </div>
+      <div>
+        <CardProyects
+          title="POLICARD"
+          about="Applicación Web para UPTAP. Desarrollado con Svelte, es una aplicación web que hace uso de una API-REST desarrollada con DJANGO; el objetivo es crear un sistema de credencialización para la Universidad"
+          img="https://dsm01pap009files.storage.live.com/y4mnlfEvg-uv6n25Cvx7WWCbpVy2OIVt5bfDWTPJscIGmgTmhEkVAf-m9Evaof-_v5DaaMKVQVHwE6f5gwHQH69Y-WaJhX-LvzQj1HtGc73y0Zen0nbZgTbE_--YD6Ha6ycCprOLUtvHnAaK25RRRc3OHe2VMZVnnYIAR3iy6oIsXSemAA-3ZPQypdnPBgBxOEf?width=1200&height=675&cropmode=none"
+          gh=""
+          pg=""
+          extra={false}
+        />
+      </div>
+      
     </div>
+    <Banner></Banner>
   </div>
-  
+  <div class="logo-container">
+    <img
+      src="https://img.icons8.com/color/144/000000/html-5--v1.png"
+      alt="HTML logo"
+      class="logo"
+    />
+    <img
+      src="https://img.icons8.com/color/144/000000/css3.png"
+      alt="CSS logo"
+      class="logo"
+    />
+    <img
+      src="https://img.icons8.com/color/144/000000/javascript--v1.png"
+      alt="JavaScript logo"
+      class="logo"
+    />
+    <img
+      src="https://dsm01pap009files.storage.live.com/y4miQ8OYKRqr5mKfIuysRA0fXIXfy1B76J9ceesxRGX6CLP1gLWunds-NglJ0s2iGKfKI8co2hUd4hTje68J3kq1fuaBQiFD5byQyH2ew3q604nXzX4ATAg2od5vw3qP7SRQX2Mk9Qew9hvfOu_R908Lw1LuSgPrRc5aHJakRNHFb_52DZsqnpE3yUnwhiwrXK_?width=126&height=150&cropmode=none"
+      alt="Astro logo"
+      class="logo"
+    />
+    <img
+      src="https://dsm01pap009files.storage.live.com/y4mflWmB9wD3uWWT67oDBVF6wXFjbJCKSpua3bKjKddaA1KB6isyzKmogkcB43OOFwgx0xLDJeckSMRbB7eUaVU8bBENy80Prhs3TYHa_jRaDD0QKHjO6C2EArpR9JY3KMuaPKc6zWNfa67ZFinlZGBZMJNADTdGuFrqsd8Cnmm7vTdGRnZyylvC-s5oBlWvN8M?width=510&height=690&cropmode=none"
+      class="logo"
+      alt="Svelte logo"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    ></script>
+  </div>
 </Layout>
-  
+
 <style>
   /* Aqui va el css */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body {
-  background: #10372A;
-  font-size: px;
-}
-/* SHOWCASE */
-  
-.btn {
+  }
+  body {
+    background: #10372a;
+    font-size: px;
+  }
+  /* SHOWCASE */
+
+  .btn {
     cursor: pointer;
     display: inline-block;
     border: 0;
@@ -59,11 +118,11 @@ body {
     font-size: 15px;
     border: 1px solid #fff;
   }
-  
+
   .btn:hover {
     opacity: 0.9;
   }
-  
+
   .showcase {
     width: 100%;
     height: 550px;
@@ -77,34 +136,46 @@ body {
     margin-bottom: 20px;
     color: #fff;
   }
-  
+
   .showcase h2,
   .showcase p {
     margin-bottom: 10px;
   }
-  
+
   .showcase .btn {
     margin-top: 20px;
   }
-  
+  .logo-container {
+    display: flex;
+    margin: 0 auto;
+    display: d-flex;
+    justify-content: center;
+    gap: 35px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    max-width: 100px;
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  .logo:hover {
+    transform: scale(1.2) rotate(360deg);
+  }
+
   /* News Cards */
   .news-cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
     margin: 70px 0;
   }
-  
-  .news-cards img {
-    width: 100%;
-    height: 180px;
-  }
-  
   .news-cards h3 {
     font-size: 20px;
     margin: 10px 0;
+    color: #fff;
   }
-  
+
   .news-cards a {
     padding: 10px 0;
     color: #f2f2f2;
@@ -112,38 +183,30 @@ body {
     display: inline-block;
     font-weight: bold;
   }
-  
+  .texto {
+    color: #f2f2f2;
+  }
   /* CARDS BANNER ONE */
-  .cards-banner-one {
-    width: 100%;
-    height: 350px;
-    background: url("./img/tech-red.jpg");
-    margin-bottom: 40px;
-  }
-  
-  .cards-banner-one .content {
-    width: 40%;
-    padding: 90px 0 0 30px;
-    color: #fff;
-  }
-  
+
+
   .cards-banner-one p,
   .cards-banner-two p {
     margin: 10px 0 20px 0;
   }
-  
+
   /* CARDS BANNER TWO*/
+
   .cards-banner-two {
     width: 100%;
     height: 350px;
     background: url("./img/image-five.jpg") no-repeat center center/cover;
   }
-  
+
   .cards-banner-two .content {
     width: 50%;
     padding: 100px 0 0 30px;
   }
-  
+
   /* Follow */
   .social {
     margin: 50px;
@@ -158,15 +221,15 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
+
   .links a {
     margin: 0 30px;
   }
-  
+
   .links a i {
     font-size: 3rem;
   }
-  
+
   /* Links */
   .footer-links {
     background: #2f3640;
@@ -174,7 +237,7 @@ body {
     font-size: 12px;
     padding: 35px 0;
   }
-  
+
   .footer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -182,15 +245,15 @@ body {
     align-items: flex-start;
     justify-content: center;
   }
-  
+
   .footer-container ul {
     margin: 0 auto;
   }
-  
+
   .footer-links li {
     line-height: 2.8;
   }
-  
+
   .footer {
     background: #2f3640;
     color: #616161;
@@ -200,17 +263,17 @@ body {
     font-size: 1rem;
     padding-bottom: 20px;
   }
-  
+
   /* Mobil */
   @media (max-width: 700px) {
     .menu-btn {
       display: block;
     }
-  
+
     .menu-btn:hover {
       opacity: 0.5;
     }
-  
+
     .nav-main ul.nav-menu {
       display: block;
       position: absolute;
@@ -225,7 +288,7 @@ body {
       transform: translateX(-500px);
       transition: transform 0.5s ease-in-out;
     }
-  
+
     .nav-main ul.nav-menu li {
       padding: 20px;
       border-bottom: #ccc solid 1px;
@@ -234,34 +297,34 @@ body {
     .nav-main ul.nav-menu li:last-child {
       border-bottom: 0;
     }
-  
+
     .nav-main ul.nav-menu.show {
       transform: translateX(-20px);
     }
-  
+
     .nav-main ul.nav-menu-right {
       margin-right: 50px;
     }
-  
+
     .news-cards {
       grid-template-columns: repeat(2, 1fr);
     }
-  
+
     .cards-banner-one .content,
     .cards-banner-two .content {
       width: 80%;
     }
-  
+
     .footer-links .footer-container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
+
   @media (max-width: 500px) {
     .news-cards {
       grid-template-columns: 1fr;
     }
-  
+
     .cards-banner-one .content,
     .cards-banner-two .content {
       width: 100%;
@@ -270,16 +333,12 @@ body {
     .footer-links .footer-container {
       grid-template-columns: 1fr;
     }
-  
+
     .footer-links .footer-container ul {
       text-align: center;
     }
   }
-
-
 </style>
-
-
 
 <script>
   /* Aqui va el javascript, si no les funciona prueben usando <script:isinline> */
