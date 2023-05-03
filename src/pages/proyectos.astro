@@ -16,16 +16,17 @@ import Banner from "../components/Banner.astro";
       rel="stylesheet"
     />
     <!-- Dentro de este Layout va su html -->
-
-    <div class="news-cards">
-      <CardProyects
-        title="MEXIC0DE"
-        about="Sitio oficial de MEXIC0DE. Desarrollado con Astro, es el portafolio del grupo de desarroladores MEXIC0DE"
-        img="https://phx02pap002files.storage.live.com/y4mjCuSoDICUagL1hWYLfcFl9KKor_iqh-F9R2XBkBOMpJeZIyFzkpL6Jesfj2RShyW9SdTCUknfY790RtT0XZ3IjKMsWjc6AjrPVqCrSRbZ-DxUSGRxOup7oz3l6L98ymp75evxkeraixQM6Sapfd4-7mWp1lH3rdOd937OjPMxGMFnFaIubb31nU1BWtDPLqi?width=960&height=720&cropmode=none"
-        gh="https://github.com/MexicodeInc2023/Mexic0de.git"
-        pg="/"
-        extra={true}
-      />
+    <div class="grid col-3 md-col-2 sm-col-1">
+      <div>
+        <CardProyects
+          title="MEXIC0DE"
+          about="Sitio oficial de MEXIC0DE. Desarrollado con Astro, es el portafolio del grupo de desarroladores MEXIC0DE"
+          img="https://phx02pap002files.storage.live.com/y4mjCuSoDICUagL1hWYLfcFl9KKor_iqh-F9R2XBkBOMpJeZIyFzkpL6Jesfj2RShyW9SdTCUknfY790RtT0XZ3IjKMsWjc6AjrPVqCrSRbZ-DxUSGRxOup7oz3l6L98ymp75evxkeraixQM6Sapfd4-7mWp1lH3rdOd937OjPMxGMFnFaIubb31nU1BWtDPLqi?width=960&height=720&cropmode=none"
+          gh="https://github.com/MexicodeInc2023/Mexic0de.git"
+          pg="/"
+          extra={true}
+        />
+      </div>
       <div>
         <CardProyects
           title="MEXIC0DE-TUTO"
@@ -36,8 +37,6 @@ import Banner from "../components/Banner.astro";
           extra={true}
         />
       </div>
-    </div>
-    <div class="news-cards">
       <div>
         <CardProyects
           title="MEXIC0DE SEARCH"
@@ -48,17 +47,17 @@ import Banner from "../components/Banner.astro";
           extra={true}
         />
       </div>
+      
       <div>
         <CardProyects
           title="POLICARD"
           about="Applicación Web para UPTAP. Desarrollado con Svelte, es una aplicación web que hace uso de una API-REST desarrollada con DJANGO; el objetivo es crear un sistema de credencialización para la Universidad"
-          img="https://dsm01pap009files.storage.live.com/y4mnlfEvg-uv6n25Cvx7WWCbpVy2OIVt5bfDWTPJscIGmgTmhEkVAf-m9Evaof-_v5DaaMKVQVHwE6f5gwHQH69Y-WaJhX-LvzQj1HtGc73y0Zen0nbZgTbE_--YD6Ha6ycCprOLUtvHnAaK25RRRc3OHe2VMZVnnYIAR3iy6oIsXSemAA-3ZPQypdnPBgBxOEf?width=1200&height=675&cropmode=none"
+          img="https://phx02pap002files.storage.live.com/y4mEopybeAXZZINyATZFR2MKbM4sJ830NRvRw5MqO18qowWZgqK5RHUf47iuixBztBIkLmAV4KOg1x2mUUERxgRXVRlc18NVDtbmnKHc2sPNxTzyvsboV7X9m9FiZKrpTqSxbjfrhTF2XNxxGr14ZA2v3C4GNZ3G06jQRDJrzZUkBbi3S-6pTrGyuiWjceoQdis?width=960&height=720&cropmode=none"
           gh=""
           pg=""
           extra={false}
         />
       </div>
-      
     </div>
     <Banner></Banner>
   </div>
@@ -88,6 +87,7 @@ import Banner from "../components/Banner.astro";
       class="logo"
       alt="Svelte logo"
     />
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
     ></script>
@@ -166,7 +166,7 @@ import Banner from "../components/Banner.astro";
   /* News Cards */
   .news-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 25px;
     margin: 70px 0;
   }
