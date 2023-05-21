@@ -302,7 +302,6 @@
 <script>
   const slider = document.querySelector(".slider__container");
   const slides = document.querySelectorAll(".slider__slide");
-  const slideWidth = slides[0].clientWidth;
   let currentSlide = 0;
 
   setInterval(() => {
@@ -310,6 +309,7 @@
     if (currentSlide > slides.length - 1) {
       currentSlide = 0;
     }
+    const slideWidth = slides[currentSlide].clientWidth;
     slider.style.transform = `translateX(-${slideWidth * currentSlide}px)`;
   }, 3000);
 </script>

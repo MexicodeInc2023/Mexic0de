@@ -7,18 +7,18 @@ import Wrapper from "../components/Wrapper.astro";
 
 <Layout title="MEXIC0DE">
   <section class="parallax">
-	  <img src="/assets/mountain.svg" alt="mountain" id="mountain" />
-	  <img src="/assets/hill.svg" alt="hill" id="hill" />
-	  <img src="/assets/piramid.svg" alt="piramid" id="piramid" />
-	  <img src="/assets/agave.svg" alt="agave" id="agave" />
-	  <img src="/assets/mexRes.svg" alt="mexcode" id="bg-res"/>
+	  <img src="/assets/mountain.svg" alt="mountain" id="mountain" decoding="async" loading="lazy"/>
+	  <img src="/assets/hill.svg" alt="hill" id="hill" decoding="async" loading="lazy"/>
+	  <img src="/assets/piramid.svg" alt="piramid" id="piramid" decoding="async" loading="lazy"/>
+	  <img src="/assets/agave.svg" alt="agave" id="agave" decoding="async" loading="lazy" />
+	  <img src="/assets/mexRes.svg" alt="mexcode" id="bg-res" decoding="async" loading="lazy"/>
 	  <h1 id="mex">MEXIC0DE</h1>
   </section>
 
   <section class="sec" id="start">
      <div class="grid col-2 sm-col-1 container middle">
 	   <div class="img">
-			    <img src="/assets/mexcodeLogo.png" alt="Mexic0de-Logo" width="100%" height="100%" />
+			    <img src="/assets/mexcodeLogo.png" alt="Mexic0de-Logo" width="100%" height="100%" decoding="async" loading="lazy" />
 	   </div>
 	   <div class="txt-center">
         <h2>¿Qué es MEXIC0DE?</h2>  
@@ -31,7 +31,7 @@ import Wrapper from "../components/Wrapper.astro";
 
   <section id="cards" class="sec">
     <br> 
-    <Wrapper staticTxt="¿Que Hacemos?" one="Paginas Web" two="Aplicaciones Web" three="Landings Pages" four="Software de Calidad"/>
+    <Wrapper staticTxt="¿Que Hacemos?" one="Paginas Web" two="Aplicaciones Web" three="Landings Pages" four="Software de Calidad" />
     <div >
       <div class="grid col-3 md-col-1 sm-col-1">
         <Card title="Aplicaciones Web" body="Desarrollamos sistemas webs que ayuden a resolver un problema" href="https://cdn-icons-png.flaticon.com/512/8004/8004045.png"/>

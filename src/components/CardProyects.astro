@@ -12,7 +12,7 @@ const { img, title, about, gh, pg, extra } = Astro.props;
 ---
 
 <div class="card">
-  <img src={img} alt="Imagen de proyecto" />
+  <img src={img} alt="Imagen de proyecto" decoding="async" loading="lazy" />
   <div class="card-content">
     <h2>{title}</h2>
     <p>{about}</p>
@@ -57,7 +57,6 @@ const { img, title, about, gh, pg, extra } = Astro.props;
   .card img {
     width: 100%;
     object-fit: cover;
-    filter: blur(2px);
     transition: all 0.3s ease;
     transform: translateZ(-1px);
   }
