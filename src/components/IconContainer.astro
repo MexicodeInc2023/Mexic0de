@@ -1,0 +1,52 @@
+---
+const {tech} = Astro.props;
+---
+
+<div id="iconContainer" class="tooltip">
+   <span class="tooltiptext">{tech}</span>
+  <slot />
+</div>
+
+<style>
+  #iconContainer {
+    padding: 10px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+  }<span class="tooltiptext">Tooltip text</span>
+
+  #iconContainer > * {
+    width: 100%;
+  }
+
+  #iconContainer:hover {
+    background-color: #56f09e0c;
+  }
+
+  .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
