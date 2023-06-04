@@ -12,20 +12,19 @@ import Wrapper from "../components/Wrapper.astro";
 
 <Layout title="Integrantes">
   <!-- Dentro de este Layout va su html -->
-  
-  <body>
-  
+
     <section class="parallax">
-        <img src="/assets/mountain.svg" alt="mountain" id="mountain" />
-        <img src="/assets/hill.svg" alt="hill" id="hill" />
-        <img src="/assets/piramid.svg" alt="piramid" id="piramid" />
-        <img src="/assets/agave.svg" alt="agave" id="agave" />
-        <img src="/assets/mexRes.svg" alt="mexcode" id="bg-res"/>
-        <h1 id="mex">INTEGRANTES</h1>
+        <img src="/assets/mountain.svg" alt="mountain" id="mountain" decoding="async" loading="lazy"/>
+        <img src="/assets/hill.svg" alt="hill" id="hill" decoding="async" loading="lazy"/>
+        <img src="/assets/piramid.svg" alt="piramid" id="piramid" decoding="async" loading="lazy"/>
+        <img src="/assets/agave.svg" alt="agave" id="agave" decoding="async" loading="lazy" />
+        <img src="/assets/mexRes.svg" alt="mexcode" id="bg-res" decoding="async" loading="lazy"/>
+        <h1 id="mex">INTEGRANTES </h1>
     </section>
   
     <section class="sec" id="start">
-        <Wrapper staticTxt="MEXIC0DE ES" one="Innovación" two="Creatividad" three="Desarrollo" four="un Equipo"/>
+        <br/>
+        <Wrapper staticTxt="MEXIC0DE ES" one="Innovacion" two="Creatividad" three="Desarrollo" four="un Equipo"/>
 
         <div class="container">
             <div class="grid col-3 md-col-2 sm-col-1">
@@ -40,7 +39,7 @@ import Wrapper from "../components/Wrapper.astro";
       
               <div class="description">
                   <h3>José Angel Arjona</h3>
-                  <h4>Lider del proyecto</h4>
+                  <h4>Lider del Proyecto</h4>
                   <p>Creador de Policard y UPWorks</p>
                   <p>Tiene un pene de 7 pulgadas y lo pretenden 5 morras</p>
               </div>
@@ -63,7 +62,7 @@ import Wrapper from "../components/Wrapper.astro";
       
               <div class="description">
                   <h3>Mario Alejandra</h3>
-                  <h4>Pajaro Mensajero</h4>
+                  <h4>Full - Stack</h4>
                   <p>Campeón del mundo en el torneo de chupar penes a señores de 50 y más</p>
                   <p>Fan de la verguita de dama</p>
               </div>
@@ -167,22 +166,7 @@ import Wrapper from "../components/Wrapper.astro";
             </div>
        </div>
       
-    </section>
-  
-    
-
-    
-
-    
-
-    
-
-    
-  
-
-    
-</body>
-    
+    </section>  
   
 </Layout>
 
@@ -194,16 +178,133 @@ import Wrapper from "../components/Wrapper.astro";
     box-sizing: border-box;
     font-family: 'Library 3 am', cursive;
 }
-
-body {
+.parallax {
+	background: #caf6dc;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: #10372a;
-    flex-wrap: wrap;
+    height: 100vh;
+}
+#mex {
+	color: var(--light);
+  position: absolute;
+  font-weight: 900;
+  font-size: 6em;
+	font-family: var(--font2);
+	text-shadow:2px 2px 2px rgba(0,0,0,0.5);
+}
+#bg-res{
+	display: none;
+}
+.parallax img {
+	position: absolute;
+	top 0;
+	left 0;
+	width: 100%;
+	pointer-events: none;
 }
 
+.sec{
+	position: relative;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  padding-top: 100px;
+	background: var(--green);
+}
+.curve {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: hsl(216, 21%, 16%);
+}
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
+
+/* Line Separator */
+.separator{
+ 	position: relative;
+	width: 100%;
+	height: 2px;
+	background: var(--light);
+}
+
+/* Responsive */
+@media screen and (width: 1024px) {
+	.parallax {
+	height: 60vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .parallax {
+	height: 60vh;
+  }
+  .parallax img {
+	display: none;
+  }
+
+  #bg-res{
+	display: block;
+	position: absolute;
+	top 0;
+	left 0;
+	width: 100%;
+	height: 120vh;
+	pointer-events: none;
+  }
+
+  #mex {
+	font-size: 3em;
+  }
+
+  .img{
+	display: flex;
+	justify-content: center;
+  }
+  
+  h2{
+      font-size: 1.5em;
+  }
+  h3{
+      font-size: 1.5em;
+  }
+  .sec p{
+      font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .parallax {
+	height: 60vh;
+  }
+
+  #bg-res{
+	margin-top: 10%;
+  }
+}
 .card {
     position: relative;
     width: 330px;
