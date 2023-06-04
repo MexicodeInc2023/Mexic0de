@@ -29,7 +29,7 @@ const { pic, name, role, numJobs, address } = Astro.props;
       </div>
     </div>
   </div>
-  <button class="request" type="button"> {address}</button>
+  <button id="copyAdress" class="request" type="button"> {address}</button>
 </div>
 
 <style>
@@ -186,3 +186,15 @@ const { pic, name, role, numJobs, address } = Astro.props;
     }
   }
 </style>
+
+<script>
+  const copyAdress = document.getElementById("copyAdress");
+  const adreess = copyAdress.innerHTML;
+  copyAdress.addEventListener("click", () => {
+    navigator.clipboard.writeText(adreess);
+    copyAdress.innerHTML = "Copiado ✅";
+    setTimeout(() => {
+      copyAdress.innerHTML = adreess;
+    }, 1500);
+  });
+</script>
