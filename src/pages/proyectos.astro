@@ -87,11 +87,12 @@ import Footer from "../components/Footer.astro";
       <div class="card-content">
         <h2>POLICARD</h2>
         <p>
-          Blog oficial de MEXIC0DE. Desarrollado con Astro, es un blog con
-          articulos de tecnologia y tutoriales.
+          Applicación Web para UPTAP. Desarrollado con Svelte, es una aplicación
+          web que hace uso de una API-REST desarrollada con DJANGO; el objetivo
+          es crear un sistema de credencialización para la Universidad
         </p>
         <div class="btnContainer">
-          <p style="color:#6e7075">Cerrado temporalmente.</p>
+          <p style="color:#6e7075">No es posible mostrar el codigo.</p>
           <!-- <a
             href="https://github.com/MexicodeInc2023/Mexic0deBlog.git"
             class="github-button"
@@ -235,5 +236,35 @@ import Footer from "../components/Footer.astro";
   .other-button:hover {
     background-color: transparent;
     color: #fff;
+  }
+
+  /* Responsive  */
+  @media (max-width: 1024px) {
+    .card-content {
+      padding: 0 20px;
+    }
+    .card-content h2 {
+      font-size: 4rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .card-content {
+      padding: 0 20px;
+    }
+
+    .card-content h2 {
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    .card-content p {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .btnContainer {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 </style>
