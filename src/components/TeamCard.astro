@@ -1,0 +1,110 @@
+---
+export interface Props {
+  name: string;
+  rol: string;
+  img: string;
+  path: string;
+  skills?: Array<String>;
+  color: string;
+}
+
+const { name, rol, img, path, skills, color } = Astro.props;
+---
+
+<div class="card-container">
+  <img class="round" src={img} alt="user" />
+  <br /><br />
+  <h3>{name}</h3>
+  <br />
+  <p>{rol}</p>
+  <br /><br />
+  <div class="buttons">
+    <a class="primary" href={path}> Portafolio</a>
+  </div>
+  <div class="skills">
+    <h6>Skills</h6>
+    {
+      skills ? (
+        <ul>
+          {skills.map((data) => (
+            <li>{data}</li>
+          ))}
+        </ul>
+      ) : (
+        <i>No hay skills</i>
+      )
+    }
+  </div>
+</div>
+
+<style define:vars={{ color }}>
+  h3 {
+    max-width: 280px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  h6 {
+    margin: 5px 0;
+    text-transform: uppercase;
+    max-width: 280px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .card-container {
+    background-color: #161616;
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    color: #b3b8cd;
+    padding-top: 30px;
+    margin: auto;
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .card-container .round {
+    border: 1px solid var(--color);
+    border-radius: 50%;
+    padding: 7px;
+    width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+  }
+
+  .primary {
+    text-decoration: none;
+    background-color: var(--color);
+    border: 1px solid var(--color);
+    border-radius: 3px;
+    color: #231e39;
+    font-weight: 500;
+    padding: 10px 25px;
+  }
+
+  .skills {
+    background-color: #121212;
+    text-align: left;
+    padding: 15px;
+    margin-top: 30px;
+  }
+
+  .skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skills ul li {
+    border: 1px solid #2d2747;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 7px 7px 0;
+    padding: 7px;
+  }
+</style>

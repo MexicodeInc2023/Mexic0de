@@ -1,0 +1,71 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="loader">
+        <div class="cell d-0"></div>
+        <div class="cell d-1"></div>
+        <div class="cell d-2"></div>
+
+        <div class="cell d-1"></div>
+        <div class="cell d-2"></div>
+
+        <div class="cell d-2"></div>
+        <div class="cell d-3"></div>
+
+        <div class="cell d-3"></div>
+        <div class="cell d-4"></div>
+      </div>
+    </div>
+    <div id="content">
+      <Navbar />
+      <h2>Conoce a nuestro equipo!</h2>
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  h2 {
+    text-align: center;
+    margin-bottom: 9rem;
+    padding: 2rem;
+    font-size: 5rem;
+    color: var(--light);
+  }
+
+  #content {
+    overflow: hidden;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--green);
+  }
+</style>
