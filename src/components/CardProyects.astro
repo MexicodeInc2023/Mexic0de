@@ -6,9 +6,13 @@ export interface Props {
   extra: boolean;
   gh: string;
   pg: string;
+  bgcolor?: string;
+  hoverdelrio?: string;
+  borderColor?: string;
+  butonColor?: string;
 }
 
-const { img, title, about, gh, pg, extra } = Astro.props;
+const { img, title, about, gh, pg, extra, bgcolor, hoverdelrio, borderColor, butonColor} = Astro.props;
 ---
 
 <div class="card">
@@ -36,7 +40,7 @@ const { img, title, about, gh, pg, extra } = Astro.props;
   </div>
 </div>
 
-<style>
+<style define:vars={{ bgcolor, hoverdelrio, borderColor, butonColor}}>
   .card {
     position: relative;
     width: 25vw;
@@ -46,7 +50,7 @@ const { img, title, about, gh, pg, extra } = Astro.props;
     transition: all 0.3s ease;
     transform-style: preserve-3d;
     transform: perspective(800px) rotateY(0deg);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--borderColor, --primary, --butonColor);
   }
 
   .card:hover {
@@ -68,11 +72,11 @@ const { img, title, about, gh, pg, extra } = Astro.props;
   .card-content {
     width: 100%;
     padding: 20px;
-    background-color: var(--green);
+    background-color: var(--bgcolor, --primary);
   }
 
   .card:hover .card-content {
-    background-color: #133f2f;
+    background-color: var(--hoverdelrio, --primary);
   }
 
   .card-content h2 {
@@ -115,7 +119,7 @@ const { img, title, about, gh, pg, extra } = Astro.props;
     justify-content: center;
     padding: 10px 20px;
     color: var(--dark);
-    background-color: var(--primary);
+    background-color: var(--butonColor);
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -123,9 +127,9 @@ const { img, title, about, gh, pg, extra } = Astro.props;
   }
 
   .other-button:hover {
-    background-color: var(--green);
+    background-color: var(--butonColor);
     color: var(--light);
-    border: 1px solid var(--primary);
+    border: 1px solid var(--hoverdelrio);
   }
 
   @media (max-width: 768px) {

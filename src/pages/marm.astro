@@ -6,27 +6,27 @@ import CardProyects from "../components/CardProyects.astro";
 import IconContainer from "../components/IconContainer.astro";
 ---
 
-<Folio title="Jose Angel Arjona Matheis">
+<Folio title="Mario Alejandro Rosales Muñoz">
   <section class="hero" id="home">
     <div class="hero-content">
-      <h1>Hola 👋 soy <span>Nombre</span></h1>
+      <h1>Hola 👋 soy <span>Mario Rosales</span></h1>
       <div class="text-animate">
         <h3>Desarrollador de Software</h3>
       </div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        Lorem pussy dolor sit amet consectetur adipisicing elit. Quisquam
         voluptatum, quibusdam, quos, voluptate voluptas quia quae dolorum
         voluptatibus quod quas natus. Quisquam voluptatum, quibusdam, quos,
         voluptate voluptas quia quae dolorum voluptatibus quod quas natus.
       </p>
       <div class="btn-box">
-        <a href="#" class="btn">Descargar CV</a>
+        <a href="" class="btn">Descargar CV</a>
         <a href="#contact" class="btn">Contacto</a>
       </div>
     </div>
     <div class="img">
       <img
-        src="https://th.bing.com/th/id/R.7638ae657ade274bd98a0ef815d57297?rik=mXi9oiGKXaFJJA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f06%2fRaccoon-PNG-Picture.png&ehk=7OdZOKIOCzEBp9YEzpPwnX6h0dRSLr%2fIrlnsn8QvAAM%3d&risl=&pid=ImgRaw&r=0"
+        src="https://dsm01pap009files.storage.live.com/y4mVrHWs9jUm4xYw4wK4K7n6bVvGmQVCWO47urfZrt-yZd6nd4xUCrVHfMX5uBclySEig1ry4ncOI-eV7pOOJ07cO84RuSZcaxSoxY9jVvQBgqckTkzzWtG93we3VC93_vHU9gFoBCPMoYzFH-X1H0-VBgLzB6xTlPyOgse8bzSB_Dky5dmzcAvijE5isHGxcgR?width=960&height=627&cropmode=none"
         alt="Profile Pic"
         decoding="async"
         loading="lazy"
@@ -171,9 +171,10 @@ import IconContainer from "../components/IconContainer.astro";
           gh="https://github.com/MexicodeInc2023/Mexic0de.git"
           pg="/"
           extra={true}
-          hoverdelrio="#10372a"
-          borderColor="#56f09f"
-          butonColor="#56f09f"
+          bgcolor="#101837"
+          hoverdelrio="#217DD9"
+          borderColor="#0050C3"
+          butonColor="#072DC1"
         />
       </div>
       <div>
@@ -184,9 +185,10 @@ import IconContainer from "../components/IconContainer.astro";
           gh="https://github.com/MexicodeInc2023/Mexic0deBlog.git"
           pg="https://mexic0de-blog.vercel.app/"
           extra={true}
-          hoverdelrio="#10372a"
-          borderColor="#56f09f"
-          butonColor="#56f09f"
+          bgcolor="#101837"
+          hoverdelrio="#217DD9"
+          borderColor="#0050C3"
+          butonColor="#072DC1"
         />
       </div>
       <div>
@@ -197,9 +199,10 @@ import IconContainer from "../components/IconContainer.astro";
           gh="https://github.com/MexicodeInc2023/Mexic0deSearch"
           pg="https://mexcde-search.netlify.app/"
           extra={true}
-          hoverdelrio="#10372a"
-          borderColor="#56f09f"
-          butonColor="#56f09f"
+          bgcolor="#101837"
+          hoverdelrio="#217DD9"
+          borderColor="#0050C3"
+          butonColor="#072DC1"
         />
       </div>
       <div>
@@ -210,9 +213,10 @@ import IconContainer from "../components/IconContainer.astro";
           gh=""
           pg=""
           extra={false}
-          hoverdelrio="#10372a"
-          borderColor="#56f09f"
-          butonColor="#56f09f"
+          bgcolor="#101837"
+          hoverdelrio="#217DD9"
+          borderColor="#0050C3"
+          butonColor="#072DC1"
         />
       </div>
     </div>
@@ -233,6 +237,10 @@ import IconContainer from "../components/IconContainer.astro";
 </Folio>
 
 <style>
+
+    body{
+        background-color: #101837;
+    }
   section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -246,7 +254,7 @@ import IconContainer from "../components/IconContainer.astro";
   }
 
   span {
-    color: var(--primary);
+    color: var(--blue);
   }
   .hero {
     display: flex;
@@ -343,7 +351,7 @@ import IconContainer from "../components/IconContainer.astro";
     align-items: center;
     width: 15rem;
     height: 100%;
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: var(--dark);
     text-decoration: none;
     border-radius: 5px;
@@ -356,30 +364,30 @@ import IconContainer from "../components/IconContainer.astro";
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: var(--green);
+    background-color: var(--dark);
     transition: width 0.3s ease-in-out;
   }
   .btn-box .btn:hover::before {
     width: 100%;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--blue);
     border-radius: 5px;
   }
   .btn-box .btn:hover::before {
     width: 100%;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--blue);
     border-radius: 5px;
     padding: 1rem;
     content: "✉"; /* Agrega el texto del botón */
-    color: var(--primary);
+    color: var(--blue);
   }
 
   .btn-box .btn:first-child {
-    background-color: var(--green);
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    background-color: var(--dark);
+    color: var(--blue);
+    border: 2px solid var(--blue);
   }
   .btn-box .btn:first-child:hover::before {
-    background-color: var(--primary);
+    background-color: var(--blue);
     content: "✔";
     color: var(--dark);
   }
@@ -399,17 +407,17 @@ import IconContainer from "../components/IconContainer.astro";
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--blue);
     border-radius: 50%;
     font-size: 25px;
-    color: var(--primary);
+    color: var(--blue);
     text-decoration: none;
     transition: 0.3s;
     z-index: 1;
     overflow: hidden;
   }
   .social a:hover {
-    background-color: var(--primary);
+    background-color: var(--blue);
     color: var(--dark);
   }
 
@@ -427,7 +435,7 @@ import IconContainer from "../components/IconContainer.astro";
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
-    color: var(--light);
+    color: var(--blue);
   }
   .edu-row {
     display: flex;
@@ -446,7 +454,7 @@ import IconContainer from "../components/IconContainer.astro";
   }
 
   .edu-col .edu-box {
-    border-left: 2px solid var(--primary);
+    border-left: 2px solid var(--blue);
   }
   .edu-box .edu-cont {
     position: relative;
@@ -460,7 +468,7 @@ import IconContainer from "../components/IconContainer.astro";
     left: -1.01rem;
     width: 2rem;
     height: 2rem;
-    background-color: var(--primary);
+    background-color: var(--blue);
     border-radius: 50%;
   }
   .edu-cont .content {
@@ -485,7 +493,7 @@ import IconContainer from "../components/IconContainer.astro";
   }
   .content .year {
     font-size: 1.5rem;
-    color: var(--primary);
+    color: var(--blue);
     padding-bottom: 0.5rem;
   }
 
