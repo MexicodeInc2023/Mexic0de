@@ -1,5 +1,5 @@
 ---
-const {tech} = Astro.props;
+const {tech, colorBorder, colorFondo } = Astro.props;
 ---
 
 <div id="iconContainer" class="tooltip">
@@ -7,11 +7,11 @@ const {tech} = Astro.props;
   <slot />
 </div>
 
-<style>
+<style define:vars={{colorBorder, colorFondo}}>
   #iconContainer {
     padding: 10px;
     background: transparent;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--colorBorder);
     border-radius: 10px;
     transition: background-color 0.2s ease-in-out;
   }
@@ -19,9 +19,10 @@ const {tech} = Astro.props;
   #iconContainer > * {
     width: 100%;
   }
+  
 
   #iconContainer:hover {
-    background-color: #56f09e0c;
+    background-color: var(--colorFondo);
   }
 
   .tooltip {
