@@ -5,14 +5,17 @@ export interface Props {
   role: string;
   numJobs: string;
   address: string;
+  backgroundColor: string;
+  backgroundHover: string;
+  backgroundBtn: string;
 }
 
-const { pic, name, role, numJobs, address } = Astro.props;
+const { pic, name, role, numJobs, address, backgroundColor, backgroundHover, backgroundBtn } = Astro.props;
 ---
 
 <div class="card">
   <div class="infos">
-    <div class="image"></div>
+    <div class="image"><img src={pic}></div>
     <div class="info">
       <div>
         <p class="name">{name}</p>
@@ -32,17 +35,17 @@ const { pic, name, role, numJobs, address } = Astro.props;
   <button id="copyAdress" class="request" type="button"> {address}</button>
 </div>
 
-<style>
+<style define:vars={{ backgroundColor, backgroundHover, backgroundBtn}}>
   .card {
     max-width: 520px;
     border-radius: 1rem;
-    background-color: var(--green);
+    background-color: var(--backgroundColor);
     padding: 2rem;
     margin: auto;
   }
 
   .card:hover {
-    background-color: #133f2f;
+    background-color: var(--backgroundHover);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -58,12 +61,7 @@ const { pic, name, role, numJobs, address } = Astro.props;
     height: 10rem;
     width: 10rem;
     border-radius: 0.5rem;
-    background-color: rgb(118, 36, 194);
-    background: linear-gradient(
-      to bottom right,
-      rgb(118, 36, 194),
-      rgb(185, 128, 240)
-    );
+    
   }
 
   .info {
@@ -129,7 +127,7 @@ const { pic, name, role, numJobs, address } = Astro.props;
   }
 
   .request:hover {
-    background-color: var(--primary);
+    background-color: var(--backgroundBtn);
   }
 
   .mx {
