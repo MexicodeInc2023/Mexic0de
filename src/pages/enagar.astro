@@ -19,7 +19,10 @@ import Picture_Enrique from "../../public/assets/Enagar.png";
         Estudiante de Ingeniería En Software. Con capacidad para aprender y aplicar mis conocimientos al ámbito profesional.
       </p>
       <div class="btn-box">
-        <a href="#" class="btn">Descargar CV</a>
+        <a href="./cv/CV.Enrique_Aguilar_Armenta.pdf"
+        download
+        type="button"
+        class="btn">Descargar CV</a>
         <a href="#contact" class="btn">Contacto</a>
       </div>
     </div>
@@ -619,24 +622,24 @@ import Picture_Enrique from "../../public/assets/Enagar.png";
 </style>
 
 <script is:inline>
-  const sections = document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 
-  function showSections() {
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      const windowHeight = window.innerHeight;
+function showSections() {
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    const windowHeight = window.innerHeight;
 
-      if (window.pageYOffset > sectionTop - windowHeight + sectionHeight / 2) {
-        section.classList.add("show");
-      } else {
-        section.classList.remove("show");
-      }
-    });
-  }
+    if (window.pageYOffset > sectionTop - windowHeight + sectionHeight / 2) {
+      section.classList.add("show");
+    } else {
+      section.classList.remove("show");
+    }
+  });
+}
 
-  window.addEventListener("scroll", showSections);
-  window.addEventListener("resize", showSections);
+window.addEventListener("scroll", showSections);
+window.addEventListener("resize", showSections);
 
-  showSections();
+showSections();
 </script>
