@@ -12,7 +12,18 @@ export interface Props {
   butonColor?: string;
 }
 
-const { img, title, about, gh, pg, extra, bgcolor, hoverdelrio, borderColor, butonColor} = Astro.props;
+const {
+  img,
+  title,
+  about,
+  gh,
+  pg,
+  extra,
+  bgcolor,
+  hoverdelrio,
+  borderColor,
+  butonColor,
+} = Astro.props;
 ---
 
 <div class="card">
@@ -40,7 +51,7 @@ const { img, title, about, gh, pg, extra, bgcolor, hoverdelrio, borderColor, but
   </div>
 </div>
 
-<style define:vars={{ bgcolor, hoverdelrio, borderColor, butonColor}}>
+<style define:vars={{ bgcolor, hoverdelrio, borderColor, butonColor }}>
   .card {
     position: relative;
     width: 25vw;
@@ -127,9 +138,9 @@ const { img, title, about, gh, pg, extra, bgcolor, hoverdelrio, borderColor, but
   }
 
   .other-button:hover {
-    background-color: var(--butonColor);
+    background-color: var(--hoverdelrio);
     color: var(--light);
-    border: 1px solid var(--hoverdelrio);
+    border: 1px solid var(--borderColor);
   }
 
   @media (max-width: 768px) {
