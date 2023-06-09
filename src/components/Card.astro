@@ -11,7 +11,14 @@ const { href, title, body } = Astro.props;
 <div class="card">
   <div class="face face1">
     <div class="content">
-      <img src={href} alt="icono-web" width="100%" height="100%" decoding="async" loading="lazy"/>
+      <img
+        src={href}
+        alt="icono-web"
+        width="100%"
+        height="100%"
+        decoding="async"
+        loading="lazy"
+      />
       <h3>{title}</h3>
     </div>
   </div>
@@ -20,7 +27,7 @@ const { href, title, body } = Astro.props;
       <p>
         {body}
       </p>
-      <a href="#">Ver Proyectos</a>
+      <a href="/proyectos">Ver Proyectos</a>
     </div>
   </div>
 </div>
